@@ -13,7 +13,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        <ul className="nav-list flex justify-between w-1/3 my-auto">
+        <ul className="nav-list flex justify-between w-1/3 my-auto font-normal">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/facilities">Facilities</Link></li>
             <li><Link to="/rooms">Rooms</Link></li>
