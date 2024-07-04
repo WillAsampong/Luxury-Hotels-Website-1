@@ -7,3 +7,7 @@
 footer {
   font-family: "montserrat"
 }
+
+.hero {
+  height: calc(100% - 100px);
+}
