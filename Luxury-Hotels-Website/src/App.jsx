@@ -9,9 +9,7 @@ function App() {
   return (
     <Router>
       <div>
-        
         <Home />
-        
       </div>
     </Router>
   )
