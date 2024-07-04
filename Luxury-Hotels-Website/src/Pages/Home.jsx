@@ -1,6 +1,6 @@
 import HomeHero from '../assets/home-hero.png'
 import Navbar from '../Navbar'
-// import Footer from '../Footer'
+import Footer from '../Footer'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faChevronDown } from '@fortawesome/free-brands-svg-icons'
 
@@ -39,7 +39,7 @@ const Home = () => {
                     </div>
                 </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }
