@@ -3,14 +3,14 @@ import { faFacebookF, faTwitter, faSquareInstagram } from "@fortawesome/free-bra
 
 const Footer = () => {
   return (
-    <div className="bg-[#14274A] w-full h-60 absolute bottom-0">
-        <footer className="flex text-white justify-between w-4/5 mx-auto relative items-center">
+    <div className="bg-[#14274A] w-full h-48 border-2 border-gray-500">
+        <footer className="flex text-white justify-between w-4/5 mx-auto items-center border-2 border-gray-400">
             <div className="footer-group1">
                 <div className="logo-text">
                     <div className="uppercase text-white text-4xl font-bold">
                         Luxury
                     </div>
-                    <div className="uppercase text-white font-normal text-sm">
+                    <div className="uppercase text-white font-normal text-sm tracking-[0.3rem]">
                         Hotels
                     </div>
                 </div>
@@ -22,25 +22,25 @@ const Footer = () => {
             </div>
             <div className="nav">
                 <ul className="space-y-4 font-normal">
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Terms & Conditions</li> 
+                    <li className="cursor-pointer">About</li>
+                    <li className="cursor-pointer">Contact</li>
+                    <li className="cursor-pointer">Terms & Conditions</li> 
                 </ul>
             </div>
             <div className="socials space-y-2">
-                <div className="facebook flex space-x-4">
+                <div className="facebook flex space-x-4 cursor-pointer">
                     <FontAwesomeIcon icon={faFacebookF} className="mt-1"/>
                     <div className="social-text">
                         <p>Facebook</p>
                     </div>
                 </div>
-                <div className="twitter flex space-x-4">
+                <div className="twitter flex space-x-4 cursor-pointer">
                     <FontAwesomeIcon icon={faTwitter}  className="mt-1"/>
                     <div className="social-text">
                         <p>Twitter</p>
                     </div>
                 </div>
-                <div className="instagram flex space-x-4">
+                <div className="instagram flex space-x-4 cursor-pointer">
                     <FontAwesomeIcon icon={faSquareInstagram} className="mt-1"/>
                     <div className="social-text">
                         <p>Instagram</p>
