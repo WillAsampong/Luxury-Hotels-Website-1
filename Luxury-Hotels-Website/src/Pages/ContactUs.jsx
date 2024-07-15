@@ -34,7 +34,7 @@ const ContactUS = () => {
                     <label htmlFor="name" className="flex flex-col"> Message
                         <input type="message" id="name" className="border border-slate-800 "/>
                     </label>
-                    <button></button>
+                    <button className="bg-[#E0B973] text-white px-2 py-1 flex">Submit</button>
                 </div>
             </div>
             
