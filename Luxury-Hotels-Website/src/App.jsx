@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom';
-import Facilities from './Pages/Facilities';
-
+import Rooms from './Pages/Rooms';
+// import Facilities from './Pages/Facilities';
 // import Home from './Pages/Home';
 
 
@@ -11,7 +11,8 @@ function App() {
     <Router>
       <div>
         {/* <Home /> */}
-        <Facilities />
+        {/* <Facilities /> */}
+        <Rooms />
       </div>
     </Router>
   )

@@ -8,7 +8,7 @@ const HeroSection = ({ img }) => {
     <div>
       <div
          style={{backgroundImage: `url(${img})`}} 
-         className="hero bg-slate-600 
+         className="hero bg-slate-500 
          bg-blend-overlay w-full bg-cover bg-center flex flex-col gap-y-20">
             <Navbar />
             <div className="w-4/5 mx-auto flex flex-col gap-y-16">
