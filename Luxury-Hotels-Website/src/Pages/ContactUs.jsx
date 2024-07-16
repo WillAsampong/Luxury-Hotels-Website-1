@@ -28,13 +28,13 @@ const ContactUS = () => {
                     <label htmlFor="name" className="flex flex-col"> Name:
                         <input type="text" id="name" className="border border-slate-800 w-full p-2"/>
                     </label>
-                    <label htmlFor="name" className="flex flex-col"> Email Address
-                        <input type="text" id="name" className="border border-slate-800 w-full p-2"/>
+                    <label htmlFor="email" className="flex flex-col"> Email Address
+                        <input type="text" id="email" className="border border-slate-800 w-full p-2"/>
                     </label>
-                    <label htmlFor="name" className="flex flex-col"> Message
-                        <input type="message" id="name" className="border border-slate-800 "/>
+                    <label htmlFor="message" className="flex flex-col"> Message
+                        <input type="text" id="message" className="border border-slate-800 "/>
                     </label>
-                    <button className="bg-[#E0B973] text-white px-2 py-1 flex">Submit</button>
+                    <button className="bg-[#E0B973] text-white px-3 py-2 rounded-sm">Submit</button>
                 </div>
             </div>
             

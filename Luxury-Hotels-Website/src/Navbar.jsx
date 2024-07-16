@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -14,10 +14,10 @@ const Navbar = () => {
             </div>
         </div>
         <ul className="nav-list flex justify-between w-1/3 my-auto font-normal">
-            <li><Link to="/" className="text-white font-semibold">Home</Link></li>
-            <li><Link to="/facilities" className="text-white font-semibold">Facilities</Link></li>
-            <li><Link to="/rooms" className="text-white font-semibold">Rooms</Link></li>
-            <li><Link to="/contact-us" className="text-white font-semibold">Contact-Us</Link></li>
+            <li><NavLink to="/" className="text-white font-semibold">Home</NavLink></li>
+            <li><NavLink to="/facilities" className="text-white font-semibold">Facilities</NavLink></li>
+            <li><NavLink to="/rooms" className="text-white font-semibold">Rooms</NavLink></li>
+            <li><NavLink to="/contact-us" className="text-white font-semibold">Contact-Us</NavLink></li>
         </ul>
     </nav>
   )
