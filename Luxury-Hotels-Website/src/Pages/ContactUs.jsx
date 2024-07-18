@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import Modal from "./Modal";
 
 const ContactUS = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const ContactUS = () => {
 
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,8 +46,14 @@ const ContactUS = () => {
     
     if (Object.keys(formErrors).length === 0 && isSubmitted) {
       console.log(formData);
-      alert('Form submitted successfully');
+    //   alert('Form submitted successfully');
     }
+    setIsModalOpen(true);
+    setFormData({
+        fullname: '',
+        email: '',
+        message: ''
+    })
   };
 
   return (
@@ -87,7 +95,7 @@ const ContactUS = () => {
                   className="border border-gray-400 p-2 rounded"
                   onChange={handleChange}
                 />
-                {formErrors.fullname && <span className="text-red-500 text-sm">{formErrors.fullname}</span>}
+                {formErrors.fullname && <span className="text-red-500 text-sm font-bold">{formErrors.fullname}</span>}
               </label>
               <label htmlFor="email" className="flex flex-col">
                 Email Address
@@ -101,7 +109,7 @@ const ContactUS = () => {
                   className="border border-gray-400 p-2 rounded"
                   onChange={handleChange}
                 />
-                {formErrors.email && <span className="text-red-500 text-sm">{formErrors.email}</span>}
+                {formErrors.email && <span className="text-red-500 text-sm font-bold">{formErrors.email}</span>}
               </label>
               <label htmlFor="message" className="flex flex-col">
                 Message
@@ -116,15 +124,19 @@ const ContactUS = () => {
                   className="border border-gray-400 p-2 rounded"
                   onChange={handleChange}
                 />
-                {formErrors.message && <span className="text-red-500 text-sm">{formErrors.message}</span>}
+                {formErrors.message && <span className="text-red-500 text-sm font-bold">{formErrors.message}</span>}
               </label>
-              <button type="submit" className="bg-[#E0B973] text-white mt-3 px-4 py-2 rounded">
-                Submit
-              </button>
             </form>
+            <button type="submit" className="bg-[#E0B973] text-white mt-3 px-4 py-2 flex rounded hover:bg-[#d4a74e] transition-colors duration-300">
+            Submit
+            </button>
           </div>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2 className="text-3xl font-bold text-green-800 mb-4 text-center">Success</h2>
+        <p className="text-center">Your message has been sent successfully. We will get back to you shortly.</p>
+      </Modal>
     </div>
   );
 };
