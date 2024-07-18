@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navbar from "../Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
@@ -41,14 +41,12 @@ const ContactUS = () => {
     e.preventDefault();
     setFormErrors(validate(formData));
     setIsSubmitted(true);
-  };
-
-  useEffect(() => {
+    
     if (Object.keys(formErrors).length === 0 && isSubmitted) {
       console.log(formData);
       alert('Form submitted successfully');
     }
-  }, [formErrors, formData, isSubmitted]);
+  };
 
   return (
     <div>
