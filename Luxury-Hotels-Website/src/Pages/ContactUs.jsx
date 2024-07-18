@@ -1,8 +1,41 @@
+import { useState } from "react"
 import Navbar from "../Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
 const ContactUS = () => {
+    const [formData, setFormData] = useState({
+        fullname: "",
+        email: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
+
+    const validate = (values) => {
+        let errors = {};
+        if(!values.fullname){
+            errors.fullname = 'Name is required';
+        }
+        if(!values.email) {
+            errors.emai = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+            errors.email = 'Email is invalid'
+        }
+
+        if(!values.message) {
+            errors.message = 'Type your message';
+        }
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+    }
+
   return (
     <div>
         <div className="bg-[#14274A]">
@@ -24,17 +57,43 @@ const ContactUS = () => {
                     <p>Phone: +44 345 678 903</p>
                     <p>Email: luxury_hotels@gmail.com</p>
                 </div>
-                <div className="send-a-message flex flex-col w-2/5 gap-y-3">
-                    <label htmlFor="name" className="flex flex-col"> Name:
-                        <input type="text" id="name" className="border border-slate-800 w-full p-2"/>
-                    </label>
-                    <label htmlFor="email" className="flex flex-col"> Email Address
-                        <input type="text" id="email" className="border border-slate-800 w-full p-2"/>
-                    </label>
-                    <label htmlFor="message" className="flex flex-col"> Message
-                        <input type="text" id="message" className="border border-slate-800 "/>
-                    </label>
-                    <button className="bg-[#E0B973] text-white px-3 py-2 rounded-sm">Submit</button>
+                <div className="send-a-message w-2/5  border-2 border-blue-500 p-6">
+                    <form action="" className="flex flex-col gap-y-2" onSubmit={handleSubmit}>    
+                        <label htmlFor="name" className="flex flex-col"> Name
+                            <input
+                             type="text" 
+                             name="fullname"
+                             value={formData.fullname} 
+                             id="name" 
+                             placeholder="Enter full name..." 
+                             autoComplete="off" 
+                             className="border border-slate-800 w-full p-2" 
+                             onChange={handleChange}/>
+                        </label>
+                        <label htmlFor="email" className="flex flex-col"> Email Address
+                            <input
+                             type="text" 
+                             name="email"
+                             value={formData.email} 
+                             id="email" 
+                             placeholder="Enter your email address" 
+                             autoComplete="off" 
+                             className="border border-slate-800 w-full p-2"/>
+                        </label>
+                        <label htmlFor="message" className="flex flex-col"> Message
+                            <textarea
+                             cols={30} 
+                             rows={10} 
+                             type="text" 
+                             placeholder="Type your message..." 
+                             autoComplete="off" 
+                             id="message" 
+                             value={formData.message}
+                             name="message" 
+                             className="border border-slate-800 "/>
+                        </label>
+                        <button type="submit" className="bg-[#E0B973] text-white mt-3 px-3 py-2 rounded-sm">Submit</button>
+                    </form>
                 </div>
             </div>
             
