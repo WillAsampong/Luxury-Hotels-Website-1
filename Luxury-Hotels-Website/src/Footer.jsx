@@ -4,7 +4,7 @@ import { faFacebookF, faTwitter, faSquareInstagram } from "@fortawesome/free-bra
 const Footer = () => {
   return (
     <div className="bg-[#14274A] w-full h-48 relative">
-        <footer className="flex text-white justify-between w-4/5 items-center border-2 bottom-0 ">
+        <footer className="flex text-white justify-between w-4/5 items-center bottom-0 ">
             <div className="footer-group1">
                 <div className="logo-text">
                     <div className="uppercase text-white text-3xl font-bold">
